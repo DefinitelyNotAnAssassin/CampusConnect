@@ -6,10 +6,11 @@ include "../../php/db_connect.php"; // Include your database connection
 // Check if the form is submitted
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     // Check if all required fields are set
-    if (isset($_POST['select_subject'], $_POST['2nd_quarter'], $_POST['final'])) {
+    if (isset($_POST['select_subject'], $_POST['days_absent'], $_POST['days_present'],  $_POST['final'])) {
         // Get form data
         $selectedStudent = $_POST['select_subject'];
-        $attendancePercentage = $_POST['2nd_quarter'];
+        $days_absent = $_POST['days_absent'];
+        $days_present = $_POST['days_present'];
         $attendanceMonth = $_POST['final'];
 
         // Separate student ID, first name, and last name from the selectedStudent
@@ -21,8 +22,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         // Perform any necessary validation here
 
         // Prepare and execute SQL statement to add attendance
-        $stmt = $conn->prepare("INSERT INTO attendance (student_id, teacher_id, student_fullname, percentage, month) VALUES (?, ?, ?, ?, ?)");
-        $stmt->bind_param("issss", $studentID, $teacher_id, $student_fullname, $attendancePercentage, $attendanceMonth);
+        $stmt = $conn->prepare("INSERT INTO attendance (student_id, teacher_id, student_fullname, days_present, days_absent, month) VALUES (?, ?, ?, ?, ?, ?)");
+        $stmt->bind_param("isssss", $studentID, $teacher_id, $student_fullname, $days_present, $days_absent, $attendanceMonth);
         if ($stmt->execute()) {
             // Success message
             $_SESSION['success_message'] = "Attendance added successfully!";

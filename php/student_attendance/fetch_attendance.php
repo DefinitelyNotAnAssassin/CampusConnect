@@ -15,6 +15,8 @@ if ($result->num_rows > 0) {
     $attendanceList = [];
     while ($row = $result->fetch_assoc()) {
         $attendanceList[] = $row;
+        // add a new key to the array and assign a value
+      
     }
 } else {
     $attendanceList = [];

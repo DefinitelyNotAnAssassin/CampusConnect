@@ -60,7 +60,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 exit();
             }
 
-            $stmt->bind_param("sss", $datetime, $message, $target_file);
+            $stmt->bind_param("sss", $announcementDateTime->format('Y-m-d H:i:s'), $message, $target_file);
 
             // Execute the statement
             if ($stmt->execute()) {

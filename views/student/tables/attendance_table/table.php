@@ -14,6 +14,8 @@
             <thead class="bg-blue-500 text-white">
                 <tr>
                     <th class="border-b border-gray-200">Student Name</th>
+                    <th class="border-b border-gray-200">Days Absent</th>
+                    <th class="border-b border-gray-200">Days Present</th>
                     <th class="border-b border-gray-200">Percentage</th>
                     <th class="border-b border-gray-200">Month</th>
 
@@ -29,7 +31,9 @@
                 ?>
                             <tr class="hover:bg-slate-200">                               
                                 <th class="border-b text-sm border-gray-200"><?php echo $subjectList['student_fullname']; ?></th>
-                                <th class="border-b text-sm border-gray-200"><?php echo $subjectList['percentage']; ?></th>
+                                <td class="border-b text-sm border-gray-200"><?php echo $subjectList['days_absent']; ?></td>
+                                <td class="border-b text-sm border-gray-200"><?php echo $subjectList['days_present']; ?></td>
+                                <th class="border-b text-sm border-gray-200"><?php echo round(($subjectList['days_present'] / ($subjectList['days_present'] + $subjectList['days_absent'])) * 100, 2); ?>%</th>
                                 <td class="border-b text-sm border-gray-200"><?php echo $subjectList['month']; ?></td>                                
                             </tr>
                     <?php

@@ -8,14 +8,16 @@ if ($conn->connect_error) {
     header("Location: " . $_SERVER['HTTP_REFERER']);
     exit();
 }
-
 // Check if subject ID is provided in the request
 if (isset($_POST['id'])) {
     // Get the subject ID
     $id = $_POST['id'];
     $reject_reason = $_POST['reject_reason'];
+    $status = "rejected"; // Set the status to "rejected"
+    
     // Prepare and bind
-    $stmt = $conn->prepare("UPDATE request_credentials SET rejection_reason = ? WHERE id = ?");
+    $stmt = $conn->prepare("UPDATE request_credentials SET rejection_reason = ?, status = 'Rejected' WHERE id = ?");
+    $stmt->bind_param("si", $reject_reason, $id);
 
     // Check if the statement is prepared successfully
     if (!$stmt) {

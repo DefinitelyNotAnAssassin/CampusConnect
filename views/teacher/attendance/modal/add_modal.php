@@ -36,9 +36,16 @@
                         ?>
                     </div>
                     <div>
-                        <label for="2nd_quarter" class="block mb-2 text-sm font-medium text-gray-50">Percentage</label>
-                        <input type="text" name="2nd_quarter" id="2nd_quarter" class="input input-bordered input-md w-full" placeholder="percentage" required="">
+                        <label for="days_present" class="block mb-2 text-sm font-medium text-gray-50">Days Present</label>
+                        <input type="text" name="days_present" id="days_present" class="input input-bordered input-md w-full" placeholder="Days Present" required="">
                     </div>
+
+                    <div>
+                        <label for="days_absent" class="block mb-2 text-sm font-medium text-gray-50">Days Absent</label>
+                        <input type="text" name="days_absent" id="days_absent" class="input input-bordered input-md w-full" placeholder="Days Absent" required="">
+                    </div>
+
+                    
                     <div>
                         <label for="final" class="block mb-2 text-sm font-medium text-gray-50">Month</label>
                         <input type="text" name="final" id="final" class="input input-bordered input-md w-full" placeholder="month" required="">
