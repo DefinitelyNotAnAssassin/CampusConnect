@@ -1,8 +1,5 @@
-<?php
-session_start();
-// Include database connection
-include "../../../php/db_connect.php";
-
+<?php session_start();
+// Include database connection include "../../../php/db_connect.php" 
 ?>
 <!DOCTYPE html>
 <html lang="en" data-theme="dracula">
@@ -25,8 +22,6 @@ include "../../../php/db_connect.php";
                 <?php include '../partials/stats.php'; ?>
             </div>
         </div>
-
-
         <div class="grid place-items-center mt-5">
             <?php include '../partials/announcement.php'; ?>
         </div>

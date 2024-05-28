@@ -6,14 +6,14 @@ include "../../php/db_connect.php";
 if ($conn->connect_error) {
     $_SESSION['error_message'] = "Connection failed: " . $conn->connect_error;
 }
-
+    
 // Check if ID is provided in the request
 if (isset($_POST['id'])) {
     // Get the ID
     $id = $_POST['id'];
 
     // Prepare and bind statement to delete from users table
-    $stmt_users = $conn->prepare("DELETE FROM users WHERE id=?");
+    $stmt_users = $conn->prepare("DELETE FROM users WHERE user_id=?");
 
     // Prepare and bind statement to delete from students_accounts table
     $stmt_students = $conn->prepare("DELETE FROM student_accounts WHERE student_id=?");

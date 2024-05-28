@@ -22,7 +22,7 @@ include "../../../php/db_connect.php";
     <div class="flex flex-col h-screen w-full ">
         <div class="grid place-items-center pt-12">
             <div class="max-w-6xl w-full">
-                <?php include '../partials/stats.php'; ?>
+
             </div>
         </div>
 

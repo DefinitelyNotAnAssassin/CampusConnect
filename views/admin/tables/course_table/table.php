@@ -2,10 +2,10 @@
     <div class="text-sm breadcrumbs">
         <ul>
             <li><a href="../dashboard/index.php">Dashboard</a></li>
-            <li><a class="font-bold">Courses</a></li>
+            <li><a class="font-bold">Strand</a></li>
         </ul>
     </div>
-    <p class="text-lg font-bold mb-5">Courses</p>
+    <p class="text-lg font-bold mb-5">Strand</p>
     <!-- <button class="btn px-12 border-none text-gray-50 bg-blue-500 hover:bg-blue-600 mb-4">Add users</button> -->
     <?php include '../../admin/courses/modal/add_modal.php'; ?>
     <?php include '../tables/entries_search/entries_search.php'; ?>
@@ -14,8 +14,9 @@
             <!-- head -->
             <thead class="bg-blue-500 text-white">
                 <tr>
-                    <th class="border-b border-gray-200">Course Number</th>
-                    <th class="border-b border-gray-200">Course Name</th>
+                    <th class="border-b border-gray-200">Strand Number</th>
+                    <th class="border-b border-gray-200">Strand Name</th>
+                    <th class="border-b border-gray-200">Major</th>
                     <th class="border-b border-gray-200">Date Created</th>
                     <th class="border-b border-gray-200">Action</th>
                 </tr>
@@ -26,6 +27,8 @@
                         <tr class="hover:bg-slate-200">
                             <th class="border-b text-sm border-gray-200"><?php echo $strand['id']; ?></th>
                             <td class="border-b text-sm font-semibold border-gray-200"><?php echo $strand['strand_name']; ?></td>
+
+                            <td class="border-b text-sm border-gray-200"><?php echo $strand['major']; ?></td>
                             <td class="border-b text-sm border-gray-200"><?php echo $strand['date_created']; ?></td>
                             <td class="border-b text-sm border-gray-200">
                                 <!-- Use data attributes to store user data -->

@@ -34,6 +34,20 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $hashed_password = password_hash($student_password, PASSWORD_BCRYPT);
         $user_type = "Student";
 
+
+
+        $birthdate = new DateTime($student_birthdate);
+        $now = new DateTime();
+
+        $min_birthdate = $now->sub(new DateInterval('P5Y'));
+
+// Check if the birthdate is at least 5 years ago
+            if ($birthdate > $min_birthdate) {
+                $_SESSION['error_message'] = "Student birthdate should be at least 5 years ago";
+                header("Location: ../../views/admin/students/index.php");
+                exit();
+            }
+
         // Check for user duplication
         $stmt = $conn->prepare("SELECT * FROM users WHERE user_id = ? OR user_username = ?");
         if (!$stmt) {

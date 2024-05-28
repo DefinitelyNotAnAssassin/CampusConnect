@@ -12,7 +12,7 @@
                 <div class="grid grid-cols-4 gap-2 mb-5">
                     <div>
                         <label for="student_id" class="block mb-2 text-sm font-medium text-gray-50">Student ID</label>
-                        <input type="text" name="student_id" id="student_id" class="input input-bordered input-md w-full" placeholder="Student id" required="">
+                        <input type="text" name="student_id" id="student_id" class="input input-bordered input-md w-full" placeholder="Student id" required="" >
                     </div>
                     <div>
                         <label for="student_fname" class="block mb-2 text-sm font-medium text-gray-50">First name</label>
@@ -20,7 +20,7 @@
                     </div>
                     <div>
                         <label for="student_mname" class="block mb-2 text-sm font-medium text-gray-50">Middle name (Optional)</label>
-                        <input type="text" name="student_mname" id="student_mname" class="input input-bordered input-md w-full" placeholder="First name" required="">
+                        <input type="text" name="student_mname" id="student_mname" class="input input-bordered input-md w-full" placeholder="First name" required>
                     </div>
                     <div>
                         <label for="student_lname" class="block mb-2 text-sm font-medium text-gray-50">Last name</label>
@@ -30,7 +30,11 @@
                 <div class="grid grid-cols-3 gap-2 mb-5">
                     <div>
                         <label for="student_gender" class="block mb-2 text-sm font-medium text-gray-50">Student Gender</label>
-                        <input type="text" name="student_gender" id="student_gender" class="input input-bordered input-md w-full" placeholder="Gender" required="">
+                        <select  name="student_gender" id="student_gender" class="input input-bordered input-md w-full" placeholder="Gender" required="">
+                <option value="Male">Male</option>
+                <option value="Female">Female</option>
+
+            </select>
                     </div>
                     <div>
                         <label for="student_birthdate" class="block mb-2 text-sm font-medium text-gray-50">Student Birthdate</label>
@@ -119,8 +123,9 @@
                 <h3 class="font-bold text-lg mb-8">Login details.</h3>
                 <div class="grid grid-cols-2 gap-2 mb-5">
                     <div>
-                        <label for="student_username" class="block mb-2 text-sm font-medium text-gray-50">Student Username</label>
-                        <input type="text" name="student_username" id="student_username" class="input input-bordered input-md w-full" placeholder="Username" required="">
+                        <label for="student_username" class="block mb-2 text-sm font-medium text-gray-50">Student LRN</label>
+
+<input type="number" name="student_username" id="student_username" class="input input-bordered input-md w-full" placeholder="Learning Referrence Number" required="" oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);" maxlength="12">
                     </div>
                     <div>
                         <label for="student_password" class="block mb-2 text-sm font-medium text-gray-50">Student Password</label>
@@ -135,3 +140,60 @@
         <!-- Form end -->
     </div>
 </dialog>
+
+
+<script>
+    const student_password = document.getElementById('student_password');
+    const admin_form = document.getElementById('admin_form');
+
+    admin_form.addEventListener('submit', function(event) {
+        if (student_password.value.length < 8) {
+            alert('Password should be at least 8 characters.');
+            event.preventDefault();
+        } else if (!preg_match('/^(?=.*[!@#$%^&*-])(?=.*[0-9])(?=.*[a-zA-Z]).{8,}$/', student_password.value)) {
+            alert('Password should contain at least one special character, one number, and one letter.');
+            event.preventDefault();
+        }
+    });
+</script>
+
+
+<script>
+
+const student_id = document.getElementById('student_id');
+
+student_id.addEventListener('change', function() {
+    const student_id = this.value;
+    const url = '../../../views/admin/students/check_student_id.php';
+    const data = new FormData();
+    data.append('student_id', student_id);
+
+    fetch(url, {
+            method: 'POST',
+            body: data
+        })
+        .then(response => response.json())
+        .then(data => {
+            if (data.exists) {
+                alert('Student ID already exists.');
+                this.value = '';
+            }
+        })
+        .catch(error => console.error('Error:', error));
+});
+</script>
+
+
+<style>
+/* Chrome, Safari, Edge, Opera */
+#student_username::-webkit-inner-spin-button,
+#student_username::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+#student_username {
+  -moz-appearance: textfield;
+}
+</style>

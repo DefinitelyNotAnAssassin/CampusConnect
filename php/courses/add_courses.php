@@ -11,9 +11,9 @@ if ($conn->connect_error) {
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     // Get form data
     $strand_name = $_POST['strand_name'];
-
+    $major_name = $_POST['major_name'];
     // Prepare and bind
-    $stmt = $conn->prepare("INSERT INTO strand (strand_name) VALUES (?)");
+    $stmt = $conn->prepare("INSERT INTO strand (strand_name, major) VALUES (?, ?)");
 
     // Check if the statement is prepared successfully
     if (!$stmt) {
@@ -22,7 +22,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         exit();
     }
 
-    $stmt->bind_param("s", $strand_name);
+    $stmt->bind_param("ss", $strand_name, $major_name);
 
     try {
         // Execute the statement

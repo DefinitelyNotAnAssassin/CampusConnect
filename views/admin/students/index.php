@@ -75,3 +75,5 @@ include '../../../php/students/fetch_students.php';
         }, 1000); // Wait for the fade out transition to complete before removing
     }, 3000); // 3000 milliseconds = 3 seconds
 </script>
+
+

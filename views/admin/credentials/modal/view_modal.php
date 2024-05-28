@@ -11,7 +11,7 @@
         <form method="post">
             <button class="btn btn-sm btn-circle btn-ghost absolute right-2 top-2" onclick="document.getElementById('my_modal_<?php echo $subjectList['student_id']; ?>').close()">✕</button>
         </form>
-        <h3 class="font-bold text text-lg mb-5">Edit profile</h3>
+        <h3 class="font-bold text text-lg mb-5">Edit Credential Request</h3>
         <!-- Form start -->
         <form id="admin_form" action="../../../php/student_list/edit_student_list.php" method="post">
             <h3 class="font-bold text-lg mb-8">Primary details.</h3>
@@ -26,9 +26,15 @@
                     <input type="text" name="student_fname" value="<?php echo $subjectList['request']; ?>" id="student_fname" class="input input-bordered input-md w-full" placeholder="First name" readonly>
                 </div>
                 <div>
-                    <label for="student_mname" class="block mb-2 text-sm font-medium text-gray-50">Status</label>
-                    <input type="text" name="student_mname" value="<?php echo $subjectList['status']; ?>" id="student_mname" class="input input-bordered input-md w-full" placeholder="Middle name" readonly>
-                </div>
+                    <div>
+                        <label for="student_mname" class="block mb-2 text-sm font-medium text-gray-50">Status</label>
+                        <select name="student_mname" id="student_mname" class="input input-bordered input-md w-full" readonly>
+                            <option value="Pending" <?php if ($subjectList['status'] == 'Pending') echo 'selected'; ?>>Pending</option>
+                            <option value="Approved" <?php if ($subjectList['status'] == 'Approved') echo 'selected'; ?>>Approved</option>
+                            <option value="For release" <?php if ($subjectList['status'] == 'For release') echo 'selected'; ?>>For Release</option>
+                            <option value="D    ate to claim" <?php if ($subjectList['status'] == 'Date to claim') echo 'selected'; ?>>Date to Claim</option>
+                        </select>
+                    </div>
             </div>
             <div class="grid grid-cols-1 gap-2 mb-5">
                 <div>

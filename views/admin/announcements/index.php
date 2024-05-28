@@ -61,6 +61,8 @@ include '../../../php/all_accounts/fetch_users.php';
                                             unset($_SESSION['error_message']); // Clear the message
                                         }
                                         ?>
+
+                                        
                                     </div>
                                     </p>
                                     <form enctype="multipart/form-data" class="space-y-4 md:space-y-6" action="../../../php/announcement/announcement.php" method="POST">
@@ -71,7 +73,7 @@ include '../../../php/all_accounts/fetch_users.php';
 
                                         <div>
                                             <label for="announcement_date" class="block mb-2 text-sm font-medium text-white">Select Date and time of announcement</label>
-                                            <input type="text" name="announcement_date" id="datetimepicker" placeholder="Select Date and Time" class="input input-bordered w-full max-w">
+                                            <input type="datetime-local" name="announcement_date" id="datetimepicker" placeholder="Select Date and Time" class="input input-bordered w-full max-w" min="<?php echo date("Y-m-d\TH:i"); ?>">
                                         </div>
 
                                         <div>

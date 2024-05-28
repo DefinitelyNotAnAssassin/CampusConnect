@@ -21,7 +21,7 @@
                     </div>
                     <div>
                         <label for="teacher_mname" class="block mb-2 text-sm font-medium text-gray-50">Middle name (Optional)</label>
-                        <input type="text" name="teacher_mname" id="teacher_mname" class="input input-bordered input-md w-full" placeholder="Middle name" required="">
+                        <input type="text" name="teacher_mname" id="teacher_mname" class="input input-bordered input-md w-full" placeholder="Middle name">
                     </div>
                     <div>
                         <label for="teacher_lname" class="block mb-2 text-sm font-medium text-gray-50">Last name</label>
@@ -31,7 +31,11 @@
                 <div class="grid grid-cols-4 gap-2 mb-5">
                     <div>
                         <label for="teacher_gender" class="block mb-2 text-sm font-medium text-gray-50">Teacher Gender</label>
-                        <input type="text" name="teacher_gender" id="teacher_gender" class="input input-bordered input-md w-full" placeholder="Gender" required="">
+                        <select  name="teacher_gender" id="teacher_gender" class="input input-bordered input-md w-full" placeholder="Gender" required="">
+                            <option value="Male">Male</option>
+                            <option value="Female">Female</option>
+
+                         </select>
                     </div>
                     <div>
                         <label for="teacher_birthdate" class="block mb-2 text-sm font-medium text-gray-50">Teacher Birthdate</label>

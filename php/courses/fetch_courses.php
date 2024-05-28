@@ -7,7 +7,7 @@ if ($conn->connect_error) {
 }
 
 // Fetch data from the strands table
-$sql = "SELECT id, strand_name, date_created FROM strand";
+$sql = "SELECT id, strand_name, major, date_created FROM strand";
 $result = $conn->query($sql);
 
 if ($result->num_rows > 0) {

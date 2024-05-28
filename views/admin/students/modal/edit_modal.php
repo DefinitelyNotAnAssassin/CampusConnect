@@ -26,7 +26,7 @@
                 </div>
                 <div>
                     <label for="student_mname" class="block mb-2 text-sm font-medium text-gray-50">Middle name (Optional)</label>
-                    <input type="text" name="student_mname" value="<?php echo $student['student_mname']; ?>" id="student_mname" class="input input-bordered input-md w-full" placeholder="First name" required="">
+                    <input type="text" name="student_mname" value="<?php echo $student['student_mname']; ?>" id="student_mname" class="input input-bordered input-md w-full" placeholder="First name" >
                 </div>
                 <div>
                     <label for="student_lname" class="block mb-2 text-sm font-medium text-gray-50">Last name</label>

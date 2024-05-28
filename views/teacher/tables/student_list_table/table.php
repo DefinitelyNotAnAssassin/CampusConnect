@@ -53,8 +53,6 @@
                             <td class="border-b text-sm border-gray-200"><?php echo htmlspecialchars($studentList['school_year']); ?></td>
                             <td class="border-b text-sm border-gray-200"><?php echo htmlspecialchars($studentList['date_created']); ?></td>
                             <td class="border-b text-sm border-gray-200">
-                                <?php include '../../teacher/student_list/modal/edit_modal.php'; ?>
-                                <?php include '../../teacher/student_list/modal/delete_modal.php'; ?>
                                 <?php include '../../teacher/student_list/modal/view_modal.php'; ?>
                             </td>
                         </tr>

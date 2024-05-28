@@ -41,6 +41,15 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         // Try to move the uploaded file to the target directory
         if (move_uploaded_file($_FILES["file"]["tmp_name"], $target_file)) {
             // Prepare and bind the SQL statement
+            $announcementDateTime = new DateTime($datetime);
+            $currentDateTime = new DateTime();
+
+            if ($announcementDateTime < $currentDateTime) {
+                $_SESSION['error_message'] = "Error: The date cannot be in the past.";
+                header("Location: ../../views/admin/announcements/index.php");
+                exit();
+            }
+            
             $sql = "INSERT INTO announcement (datetime, message, file) VALUES (?, ?, ?)";
             $stmt = $conn->prepare($sql);
 

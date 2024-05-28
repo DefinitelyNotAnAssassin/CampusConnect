@@ -74,35 +74,35 @@
                 </div>
                 <div>
                     <label for="student_fname" class="block mb-2 text-sm font-medium text-gray-50">First name</label>
-                    <input type="text" name="student_fname" value="<?php echo $student['student_fname']; ?>" id="student_fname" class="input input-bordered input-md w-full" placeholder="First name" required="">
+                    <input readonly type="text" name="student_fname" value="<?php echo $student['student_fname']; ?>" id="student_fname" class="input input-bordered input-md w-full" placeholder="First name" required="">
                 </div>
                 <div>
                     <label for="student_mname" class="block mb-2 text-sm font-medium text-gray-50">Middle name (Optional)</label>
-                    <input type="text" name="student_mname" value="<?php echo $student['student_mname']; ?>" id="student_mname" class="input input-bordered input-md w-full" placeholder="Middle name">
+                    <input readonly type="text" name="student_mname" value="<?php echo $student['student_mname']; ?>" id="student_mname" class="input input-bordered input-md w-full" placeholder="Middle name">
                 </div>
                 <div>
                     <label for="student_lname" class="block mb-2 text-sm font-medium text-gray-50">Last name</label>
-                    <input type="text" name="student_lname" value="<?php echo $student['student_lname']; ?>" id="student_lname" class="input input-bordered input-md w-full" placeholder="Last name" required="">
+                    <input readonly readonly type="text" name="student_lname" value="<?php echo $student['student_lname']; ?>" id="student_lname" class="input input-bordered input-md w-full" placeholder="Last name" required="">
                 </div>
             </div>
             <div class="grid grid-cols-3 gap-2 mb-5">
                 <div>
                     <label for="student_gender" class="block mb-2 text-sm font-medium text-gray-50">Student Gender</label>
-                    <input type="text" name="student_gender" value="<?php echo $student['student_gender']; ?>" id="student_gender" class="input input-bordered input-md w-full" placeholder="Gender" required="">
+                    <input readonly readonly type="text" name="student_gender" value="<?php echo $student['student_gender']; ?>" id="student_gender" class="input input-bordered input-md w-full" placeholder="Gender" required="">
                 </div>
                 <div>
                     <label for="student_birthdate" class="block mb-2 text-sm font-medium text-gray-50">Student Birthdate</label>
-                    <input type="date" name="student_birthdate" value="<?php echo $student['student_birthdate']; ?>" id="datetimepicker" placeholder="Select Birthday" class="input input-bordered w-full max-w">
+                    <input readonly readonly type="date" name="student_birthdate" value="<?php echo $student['student_birthdate']; ?>" id="datetimepicker" placeholder="Select Birthday" class="input input-bordered w-full max-w">
                 </div>
                 <div>
                     <label for="student_address" class="block mb-2 text-sm font-medium text-gray-50">Student Address</label>
-                    <input type="text" name="student_address" id="student_address" value="<?php echo $student['student_address']; ?>" class="input input-bordered input-md w-full" placeholder="Address" required="">
+                    <input readonly readonly type="text" name="student_address" id="student_address" value="<?php echo $student['student_address']; ?>" class="input input-bordered input-md w-full" placeholder="Address" required="">
                 </div>
             </div>
             <div class="grid grid-cols-3 gap-2 mb-5">
                 <div>
                     <label for="student_email" class="block mb-2 text-sm font-medium text-gray-50">Student Email</label>
-                    <input type="email" name="student_email" id="student_email" value="<?php echo $student['student_email']; ?>" class="input input-bordered input-md w-full" placeholder="Email" required="">
+                    <input readonly readonly type="email" name="student_email" id="student_email" value="<?php echo $student['student_email']; ?>" class="input input-bordered input-md w-full" placeholder="Email" required="">
                 </div>
                 <div>
                     <label for="student_strand" class="block mb-2 text-sm font-medium text-gray-50">Student Strand</label>
@@ -153,29 +153,29 @@
                 ?>
                             <div>
                                 <label for="teacher_name_<?php echo $studentList['student_id']; ?>" class="block mb-2 text-sm font-medium text-gray-50">Teacher name</label>
-                                <input type="text" value="<?php echo htmlspecialchars($studentList['teacher_fname'] . " " . $studentList['teacher_lname']); ?>" name="teacher_name_<?php echo $studentList['student_id']; ?>" id="teacher_name_<?php echo $studentList['student_id']; ?>" class="input input-bordered input-md w-full" placeholder="Name" required="">
+                                <input readonly type="text" value="<?php echo htmlspecialchars($studentList['teacher_fname'] . " " . $studentList['teacher_lname']); ?>" name="teacher_name_<?php echo $studentList['student_id']; ?>" id="teacher_name_<?php echo $studentList['student_id']; ?>" class="input input-bordered input-md w-full" placeholder="Name" required="">
                             </div>
                             <div>
                                 <label for="subjects_<?php echo $studentList['student_id']; ?>" class="block mb-2 text-sm font-medium text-gray-50">Subjects</label>
-                                <input type="text" value="<?php echo htmlspecialchars($studentList['student_schedule_subject_name']); ?>" name="subjects_<?php echo $studentList['student_id']; ?>" id="subjects_<?php echo $studentList['student_id']; ?>" class="input input-bordered input-md w-full" placeholder="Subjects" required="">
+                                <input readonly type="text" value="<?php echo htmlspecialchars($studentList['student_schedule_subject_name']); ?>" name="subjects_<?php echo $studentList['student_id']; ?>" id="subjects_<?php echo $studentList['student_id']; ?>" class="input input-bordered input-md w-full" placeholder="Subjects" required="">
                             </div>
                             <div>
                                 <label for="scheduled_time_<?php echo $studentList['student_id']; ?>" class="block mb-2 text-sm font-medium text-gray-50">Scheduled Time</label>
-                                <input type="text" value="<?php echo htmlspecialchars($studentList['student_schedule_subject_schedule_time']); ?>" name="scheduled_time_<?php echo $studentList['student_id']; ?>" id="scheduled_time_<?php echo $studentList['student_id']; ?>" class="input input-bordered input-md w-full" placeholder="Scheduled Time" required="">
+                                <input readonly type="text" value="<?php echo htmlspecialchars($studentList['student_schedule_subject_schedule_time']); ?>" name="scheduled_time_<?php echo $studentList['student_id']; ?>" id="scheduled_time_<?php echo $studentList['student_id']; ?>" class="input input-bordered input-md w-full" placeholder="Scheduled Time" required="">
                             </div>
                             <div>
                                 <label for="scheduled_day_<?php echo $studentList['student_id']; ?>" class="block mb-2 text-sm font-medium text-gray-50">Scheduled day</label>
-                                <input type="text" value="<?php echo htmlspecialchars($studentList['student_schedule_subject_schedule_day']); ?>" name="scheduled_day_<?php echo $studentList['student_id']; ?>" id="scheduled_day_<?php echo $studentList['student_id']; ?>" class="input input-bordered input-md w-full" placeholder="Scheduled Day" required="">
+                                <input readonly type="text" value="<?php echo htmlspecialchars($studentList['student_schedule_subject_schedule_day']); ?>" name="scheduled_day_<?php echo $studentList['student_id']; ?>" id="scheduled_day_<?php echo $studentList['student_id']; ?>" class="input input-bordered input-md w-full" placeholder="Scheduled Day" required="">
                             </div>
                             <div>
                                 <label for="semester_<?php echo $studentList['student_id']; ?>" class="block mb-2 text-sm font-medium text-gray-50">Semester</label>
-                                <input type="text" value="<?php echo htmlspecialchars($studentList['semester']); ?>" name="semester_<?php echo $studentList['student_id']; ?>" id="semester_<?php echo $studentList['student_id']; ?>" class="input input-bordered input-md w-full" placeholder="Semester" required="">
+                                <input readonly type="text" value="<?php echo htmlspecialchars($studentList['semester']); ?>" name="semester_<?php echo $studentList['student_id']; ?>" id="semester_<?php echo $studentList['student_id']; ?>" class="input input-bordered input-md w-full" placeholder="Semester" required="">
                             </div>
                         <?php
                         }
                     } else {
                         ?>
-                        <p class="text-center">No schedules found for this teacher</p>
+                        <p class="text-center">No schedules found for this student</p>
                     <?php
                     }
                 } else {

@@ -13,7 +13,7 @@
         </form>
         <h3 class="font-bold text-lg">Approve request?</h3>
         <form action="../../../php/request/approve.php" method="post">
-            <p class="py-7 font-semibold text-base">Are you sure you want to approve this course?</p>
+            <p class="py-7 font-semibold text-base">Are you sure you want to approve this request?</p>
             <input hidden type="" name="id" value="<?php echo $subjectList['id']; ?>" /> <!-- Corrected 'nane' to 'name' -->
 
             <!-- Submit Button -->

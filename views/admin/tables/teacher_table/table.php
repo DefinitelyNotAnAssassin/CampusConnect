@@ -9,6 +9,7 @@
     <p class="text-lg font-bold mb-5">Teachers</p>
     <!-- <button class="btn px-12 border-none text-gray-50 bg-blue-500 hover:bg-blue-600 mb-4">Add users</button> -->
     <?php include '../../admin/teachers/modal/add_modal.php'; ?>
+    <?php include '../../admin/teachers/modal/bulk_modal.php'; ?>
     <?php include '../tables/entries_search/entries_search.php'; ?>
     <div class="overflow-x-auto rounded-md">
         <table class="table table-lg border-none">

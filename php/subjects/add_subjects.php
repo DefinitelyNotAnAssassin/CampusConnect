@@ -12,8 +12,22 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     // Get form data
     $subject_name = $_POST['subject_name'];
 
+    // Check if subject already exists
+    $check_stmt = $conn->prepare("SELECT * FROM subject WHERE subject_name = ?");
+    $check_stmt->bind_param("s", $subject_name);
+    $check_stmt->execute();
+    $check_result = $check_stmt->get_result();
+
+    if ($check_result->num_rows > 0) {
+        // Set error message
+        $_SESSION['error_message'] = "Subject already exists";
+        header("Location: ../../views/admin/subjects/index.php");
+        exit();
+    }
+
     // Prepare and bind
     $stmt = $conn->prepare("INSERT INTO subject (subject_name) VALUES (?)");
+    $stmt->bind_param("s", $subject_name);
 
     // Check if the statement is prepared successfully
     if (!$stmt) {

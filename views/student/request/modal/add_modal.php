@@ -22,7 +22,8 @@
                         <select required name="select_credential" class="select select-bordered w-full max-w">
                             <option disabled selected>Select Credential</option>
                             <option value="FORM 137">FORM 137</option>
-                            <option value="Good Moral">Good Moral</option>
+                            <option value="Good Moral">GOOD MORAL</option>
+                            <option value="COE">COE</option>
                         </select>
                     </div>
                 </div>
