@@ -41,6 +41,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
         $min_birthdate = $now->sub(new DateInterval('P5Y'));
 
+
+      
+
 // Check if the birthdate is at least 5 years ago
             if ($birthdate > $min_birthdate) {
                 $_SESSION['error_message'] = "Student birthdate should be at least 5 years ago";

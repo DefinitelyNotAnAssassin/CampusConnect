@@ -86,37 +86,37 @@
                 <h3 class="font-bold text-lg mb-8">Secondary details.</h3>
                 <div class="grid grid-cols-4 gap-2 mb-5">
                     <div>
-                        <label for="student_guardian" class="block mb-2 text-sm font-medium text-gray-50">Guardian name</label>
+                        <label for="student_guardian" class="block mb-2 text-sm font-medium text-gray-50">Father Name</label>
                         <input type="text" name="student_guardian" id="student_guardian" class="input input-bordered input-md w-full" placeholder="Name" required="">
                     </div>
                     <div>
-                        <label for="student_guardian_contact" class="block mb-2 text-sm font-medium text-gray-50">Guardian Contact</label>
+                        <label for="student_guardian_contact" class="block mb-2 text-sm font-medium text-gray-50">Father Contact</label>
                         <input type="text" name="student_guardian_contact" id="student_guardian_contact" class="input input-bordered input-md w-full" placeholder="Contact" required="">
                     </div>
                     <div>
-                        <label for="student_guardian_address" class="block mb-2 text-sm font-medium text-gray-50">Guardian Address</label>
+                        <label for="student_guardian_address" class="block mb-2 text-sm font-medium text-gray-50">Father Address</label>
                         <input type="text" name="student_guardian_address" id="student_guardian_address" class="input input-bordered input-md w-full" placeholder="Address" required="">
                     </div>
                     <div>
-                        <label for="student_guardian_work" class="block mb-2 text-sm font-medium text-gray-50">Guardian Occupation</label>
+                        <label for="student_guardian_work" class="block mb-2 text-sm font-medium text-gray-50">Father Occupation</label>
                         <input type="text" name="student_guardian_work" id="student_guardian_work" class="input input-bordered input-md w-full" placeholder="Occupation" required="">
                     </div>
                 </div>
                 <div class="grid grid-cols-4 gap-2 mb-5">
                     <div>
-                        <label for="student_2ndguardian" class="block mb-2 text-sm font-medium text-gray-50">2nd Guardian name</label>
+                        <label for="student_2ndguardian" class="block mb-2 text-sm font-medium text-gray-50">Mother Name</label>
                         <input type="text" name="student_2ndguardian" id="student_2ndguardian" class="input input-bordered input-md w-full" placeholder="Name" required="">
                     </div>
                     <div>
-                        <label for="student_2ndguardian_contact" class="block mb-2 text-sm font-medium text-gray-50">2nd Guardian Contact</label>
+                        <label for="student_2ndguardian_contact" class="block mb-2 text-sm font-medium text-gray-50">Mother Contact</label>
                         <input type="text" name="student_2ndguardian_contact" id="student_2ndguardian_contact" class="input input-bordered input-md w-full" placeholder="Contact" required="">
                     </div>
                     <div>
-                        <label for="student_2ndguardian_address" class="block mb-2 text-sm font-medium text-gray-50">2nd Guardian Address</label>
+                        <label for="student_2ndguardian_address" class="block mb-2 text-sm font-medium text-gray-50">Mother Address</label>
                         <input type="text" name="student_2ndguardian_address" id="student_2ndguardian_address" class="input input-bordered input-md w-full" placeholder="Address" required="">
                     </div>
                     <div>
-                        <label for="student_2ndguardian_work" class="block mb-2 text-sm font-medium text-gray-50">2nd Guardian Occupation</label>
+                        <label for="student_2ndguardian_work" class="block mb-2 text-sm font-medium text-gray-50">Mother Occupation</label>
                         <input type="text" name="student_2ndguardian_work" id="student_2ndguardian_work" class="input input-bordered input-md w-full" placeholder="Occupation" required="">
                     </div>
                 </div>

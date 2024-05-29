@@ -24,16 +24,26 @@ if ($result && $result->num_rows > 0) {
 $conn->close();
 ?>
 
-<div class="lg:w-700 lg:w-3/4 mx-auto card lg:card-side bg-base-300 shadow-xl">
-    <figure>
-        <img src="<?php echo $announcement_image; ?>" style="height:400px;" alt="Announcement" />
-    </figure>
-    <div class="card-body">
-        <h2 class="card-title">New Announcement</h2>
-        <p>Announcement set at date: <?php echo $datetime; ?><br>
-            Announcement message: <?php echo $announcement_message; ?></p>
-        <div class="card-actions justify-end">
-            <!-- <button class="btn btn-primary">Listen</button> -->
-        </div>
+<div class="h-screen w-full mx-auto card lg:card-side bg-base-300 shadow-xl">
+    
+    <div class="w-full h-full border border-black flex ">
+
+
+            <img src="<?php echo $announcement_image; ?>" class = "w-1/2 h-full object-contain" alt="">
+            <div class ="w-1/2 h-full overflow-y-auto max-w-[50%] text-justify mx-12 flex flex-col">
+            <div class="w-full flex flex-col items-center justify-center mb-8">
+            <h2 class="card-title ">New Announcement</h2>
+            <p>Announcement set at date: <?php echo $datetime; ?><br> </p>
+
+            </div>
+
+            <div class="w-full h-full flex flex-col items-center justify-center space-y-2">
+                <h1>Announcement message: <?php echo $announcement_message; ?></h1>
+            </div>
+           
+            
+                </div>
     </div>
+
+
 </div>

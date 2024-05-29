@@ -42,7 +42,14 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         $user_type = "Student";
 
 
+        if (preg_match("/^\d+$/", $student_username)) {
+            echo "Valid";
+        } else {
+            $_SESSION['error_message'][] = "Student ID should be a number";
+            continue;
 
+        }
+        
         $birthdate = new DateTime($student_birthdate);
         $now = new DateTime();
 
@@ -115,6 +122,10 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         
         if ($_SESSION['error_message'] == "") {
             unset($_SESSION['error_message']);
+        } 
+
+        if ($_SESSION['success_message'] == "") {
+            unset($_SESSION['success_message']);
         } 
         header("Location: ../../views/admin/students/index.php");
 

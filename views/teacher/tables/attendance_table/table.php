@@ -14,6 +14,8 @@
             <thead class="bg-blue-500 text-white">
                 <tr>
                     <th class="border-b border-gray-200">Student Name</th>
+                    <th class="border-b border-gray-200">Days Present</th>
+                    <th class="border-b border-gray-200">Days Absent</th>
                     <th class="border-b border-gray-200">Percentage</th>
                     <th class="border-b border-gray-200">Month</th>
                     <th class="border-b border-gray-200">Action</th>
@@ -30,7 +32,10 @@
                 ?>
                 <tr class="hover:bg-slate-200">
                     <th class="border-b text-sm border-gray-200"><?php echo $attendance['student_fullname']; ?></th>
-                    <th class="border-b text-sm border-gray-200"><?php echo $attendance['percentage']; ?></th>
+                    <td class="border-b text-sm border-gray-200"><?php echo $attendance['days_present']; ?></td>
+                    <td class="border-b text-sm border-gray-200"><?php echo $attendance['days_absent']; ?></td>
+                    <th class="border-b text-sm border-gray-200"><?php echo round(($attendance['days_present'] / ($attendance['days_present'] + $attendance['days_absent'])) * 100, 2); ?>%</th>
+                            
                     <td class="border-b text-sm border-gray-200"><?php echo $attendance['month']; ?></td>
                     <td class="border-b text-sm border-gray-200">
                         <?php include '../../teacher/student_list/modal/edit_modal.php'; ?>
