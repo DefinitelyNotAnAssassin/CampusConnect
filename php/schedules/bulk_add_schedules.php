@@ -44,7 +44,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             // Proceed with your logic
         } else {
             // Schedule is not valid
-            $_SESSION['error_message'] = "The schedule start time and end time must not be greater than 5 PM and must not span from PM to AM.";
+            $_SESSION['error_message'] = "The schedule start time and end time must not be greater than 5 PM and must not span from PM to AM. " + $schedule_subject_name + $schedule_strand_name + $start_time + $end_time + $schedule_days;
             header("Location: ../../views/admin/schedules/index.php");
             exit();
         }
