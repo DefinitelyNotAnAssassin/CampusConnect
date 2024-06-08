@@ -23,11 +23,26 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $strand_id = $strand_values[0];
         $schedule_strand_name = $strand_values[1];
 
-        $start_time = $_POST['start_time'];
-        $end_time = $_POST['end_time'];
-        $schedule_time = $_POST['start_time'] . " - " . $_POST['end_time'];
-        $schedule_days = $_POST['schedule_day']; // Array of selected days
+        $start_time = date("H:i", strtotime($_POST['start_time']));
+        $end_time = date("H:i", strtotime($_POST['end_time']));
 
+        // Define the cutoff time as 17:00 (5 PM)
+        $cutoff_time = "17:00";
+
+        // Check if the start time is before the cutoff time and the end time is before the start time (indicating a next day scenario) or before the cutoff time
+        if ($start_time < $cutoff_time && ($end_time < $start_time || $end_time <= $cutoff_time)) {
+            // Schedule is valid
+            $schedule_time = $_POST['start_time'] . " - " . $_POST['end_time'];
+            $schedule_days = $_POST['schedule_day']; // Array of selected days
+            // Proceed with your logic
+        } else {
+            // Schedule is not valid
+            $_SESSION['error_message'] = "The schedule start time and end time must not be greater than 5 PM and must not span from PM to AM.";
+            header("Location: ../../views/admin/schedules/index.php");
+            exit();
+        }
+
+        
         // Check if all required fields are provided
         if (!empty($subject_id) && !empty($start_time) && !empty($end_time) && !empty($strand_id) && !empty($schedule_days)) {
             // Check if start time and end time are the same
